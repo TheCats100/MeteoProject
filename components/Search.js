@@ -21,6 +21,7 @@ const style = StyleSheet.create({
   searchBar: {
     height: 40,
     borderColor: 'gray',
-    borderWidth: 1
+    borderWidth: 1,
+    marginVertical: 80
   }
 })

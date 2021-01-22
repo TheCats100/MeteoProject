@@ -1,5 +1,6 @@
 import React from 'react';
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
+import { TextInput } from 'react-native-gesture-handler';
 
 const About = () => {
 
@@ -15,6 +16,7 @@ const About = () => {
           size="large" 
           animating={true}
         />
+        <TextInput />
     </View>
   )
 }
@@ -22,7 +24,8 @@ export default About
 
 const style = StyleSheet.create({
   view: {
-    margin: 20
+    margin: 20,
+    marginTop: 70
   },
   title: {
     fontSize: 22,
