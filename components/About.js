@@ -16,7 +16,6 @@ const About = () => {
           size="large" 
           animating={true}
         />
-        <TextInput />
     </View>
   )
 }
