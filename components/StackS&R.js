@@ -5,7 +5,7 @@ import Results from './Results';
 
 const Stack = createStackNavigator();
 
-function MyStack() {
+function MyStack({ city }) {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Search" component={Search} options={{title: 'Rechercher une ville'}}/>
