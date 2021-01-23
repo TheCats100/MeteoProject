@@ -8,8 +8,8 @@ const Stack = createStackNavigator();
 function MyStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Search" component={Search} />
-      <Stack.Screen name="Results" component={Results} />
+      <Stack.Screen name="Search" component={Search} options={{title: 'Rechercher une ville'}}/>
+      <Stack.Screen name="Results" component={Results} options={{title: 'Météo de ...'}}/>
     </Stack.Navigator>
   );
 }
