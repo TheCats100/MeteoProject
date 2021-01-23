@@ -1,14 +1,27 @@
 import React, { useState } from 'react';
 import style from '../Style.js'
 import { TextInput, Button, View } from 'react-native';
+import { connect } from 'react-redux';
+
+const mapStateToProps = (state) => ({
+  city: state.city
+})
 
 
-const Search = ({ navigation: { navigate } }) => {
+const Search = ({ navigation: { navigate }, dispatch }) => {
 
   const [city, setCity] = useState('Troyes')
 
+  const handleCity = (city) => {
+    dispatch({
+      type: 'SWITCH_CITY',
+      newCity: city
+    })
+  }
+
   const submit = () => {
-    navigate('Results', { city })
+    navigate('Results')
+    handleCity(city)
   }
 
   return (
@@ -25,4 +38,4 @@ const Search = ({ navigation: { navigate } }) => {
 }
 
 
-export default Search;
+export default connect(mapStateToProps)(Search);
