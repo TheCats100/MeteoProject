@@ -1,9 +1,13 @@
 import React from 'react';
 import { View, StatusBar, StyleSheet, Image } from 'react-native';
-import About from './components/About';
-import Search from './components/Search';
+
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { NavigationContainer } from '@react-navigation/native';
+
+import About from './components/About';
+import Search from './components/Search';
+import Stack from './components/StackS&R';
+
 
 const iconToAbout = () => <Image source={require('./components/icons/user.png')} style={{ width: 20, height: 20 }} />
 const iconToSearch = () => <Image source={require('./components/icons/accueil.png')} style={{ width: 20, height: 20 }} />
@@ -19,11 +23,12 @@ export default function App() {
           showIcon: true,
           showLabel: false,
           style: style.navBar,
-          indicatorStyle: style.indicator
+          indicatorStyle: style.indicator,
+          position: 'bottom'
         }}>
           <Tab.Screen 
             name="Search" 
-            component={Search}
+            component={Stack}
             options={{ 
               title: 'Search',
               tabBarIcon: iconToSearch
