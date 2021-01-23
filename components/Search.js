@@ -15,6 +15,8 @@ const Search = () => {
   )
 }
 
+
+
 export default Search;
 
 const style = StyleSheet.create({
@@ -22,6 +24,5 @@ const style = StyleSheet.create({
     height: 40,
     borderColor: 'gray',
     borderWidth: 1,
-    marginVertical: 80
   }
 })
