@@ -1,28 +1,28 @@
 import React, { useState } from 'react';
-import { TextInput, StyleSheet } from 'react-native';
+import style from '../Style.js'
+import { TextInput, Button, View } from 'react-native';
 
-const Search = () => {
+
+const Search = ({ navigation: { navigate } }) => {
 
   const [city, setCity] = useState('Troyes')
 
+  const submit = () => {
+    navigate('Results', { city })
+  }
+
   return (
+    <View style={style.container}>
     <TextInput
       underlineColorAndroid='transparent'
       style={style.searchBar}
       value={city}
       onChangeText={text => setCity(text)}
     />
+    <Button color={style.color} onPress={() => submit()} title="Rechercher" />
+    </View>
   )
 }
 
 
-
 export default Search;
-
-const style = StyleSheet.create({
-  searchBar: {
-    height: 40,
-    borderColor: 'gray',
-    borderWidth: 1,
-  }
-})

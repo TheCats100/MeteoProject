@@ -1,6 +1,6 @@
 import React from 'react';
-import { ActivityIndicator, StyleSheet, Text, View, Image, Button } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
+import { ActivityIndicator, Text, View, Image, Button } from 'react-native';
+import style from '../Style.js';
 
 const About = ({ navigation: { navigate } }) => {
 
@@ -11,7 +11,7 @@ const About = ({ navigation: { navigate } }) => {
   //watch time 42:35
 
   return (
-    <View style={style.view}>
+    <View style={style.container}>
       <Text style={style.title}>A propos de l'application</Text>
       <Text>
         Lorem ipsum dolor sit ametss, consectetur adipisicing elit. Veniam eligendi ullam nam. Veniam distinctio, iste in error illo ea molestiae magni ut, alias saepe nulla, cumque perspiciatis iusto quia accusantium?
@@ -22,21 +22,10 @@ const About = ({ navigation: { navigate } }) => {
         size="large"
         animating={true}
       /> */}
-      <Button title="Rechercher" onPress={() => search()} />
+      <Button color={style.color} title="Rechercher une ville" onPress={() => search()} />
     </View>
   )
 }
 
 
 export default About;
-
-
-const style = StyleSheet.create({
-  view: {
-    margin: 20,
-  },
-  title: {
-    fontSize: 22,
-    marginBottom: 20,
-  }
-})
