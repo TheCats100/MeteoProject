@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Button } from 'react-native';
 import { connect } from 'react-redux';
 import Axios from 'axios';
@@ -19,11 +19,16 @@ const Results = ({ city }) => {
       .catch(err => console.log(err))
   }
 
+  useEffect(() => {
+    fetchWeather()
+  }, [city])
+
   return (
     <View>
       <Text>
         {city}
       </Text>
+      
       <Button title='Show me city' onPress={() => fetchWeather()} />
     </View>
   )
