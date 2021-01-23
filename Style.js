@@ -17,5 +17,14 @@ export default {
   button: {
     backgroundColor: '#A2273C',
     color: '#FFFFFF'
+  },
+  navBar: {
+    backgroundColor: "#a2273C",
+    borderTopWidth: 1,
+    borderColor: "#3f101C"
+  },
+  indicator: {
+    height: 2,
+    backgroundColor: "#FFF"
   }
 }

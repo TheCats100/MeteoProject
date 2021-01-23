@@ -8,6 +8,7 @@ import About from './components/About';
 import Search from './components/Search';
 import Stack from './components/StackS&R';
 
+import style from './Style';
 
 const iconToAbout = () => <Image source={require('./components/icons/user.png')} style={{ width: 20, height: 20 }} />
 const iconToSearch = () => <Image source={require('./components/icons/accueil.png')} style={{ width: 20, height: 20 }} />
@@ -47,15 +48,3 @@ export default function App() {
     </View>
   );
 }
-
-const style = StyleSheet.create({
-  navBar: {
-    backgroundColor: "#a2273C",
-    borderTopWidth: 1,
-    borderColor: "#3f101C"
-  },
-  indicator: {
-    height: 2,
-    backgroundColor: "#FFF"
-  }
-})
