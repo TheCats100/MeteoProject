@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import moment from 'moment';
 import 'moment/locale/fr';
 
@@ -8,16 +8,28 @@ import style from '../Style';
 moment.locale('fr')
 
 const Weather = ({ temp, day, typeWeather, index }) => {
-  
-  const dayMoment = (today) => <Text style={[uniStyle.white, uniStyle.bold]}>{moment(today * 1000).format('ddd')}</Text>
-  const dayDate = (today) => <Text style={uniStyle.white}>{moment(today*1000).format('DD/MM')}</Text>
 
-  const icon = () => <Text>{typeWeather}</Text>
-  
+  const dayMoment = (today) => <Text style={[uniStyle.white, uniStyle.bold]}>{(moment(today * 1000).format('ddd')).toUpperCase()}</Text>
+  const dayDate = (today) => <Text>{moment(today * 1000).format('DD/MM')}</Text>
+
+  const icon = () => {
+    const useLogo = (url) => <Image source={url} style={{width: 50, height: 50}}/>
+    switch (typeWeather) {
+      case 'clouds':
+        return useLogo(require('./icons/cloudy.png'))
+      case 'rain':
+        return useLogo(require('./icons/rain.png'))
+      default:
+        return useLogo(require('./icons/sun.png'))
+    }
+  }
+
+
+
   return (
     <View style={uniStyle.dayWeather}>
-      <Text>{dayMoment(day)}{dayDate(day)}</Text>
       {icon()}
+      <Text>{dayMoment(day)}{dayDate(day)}</Text>
       <Text style={uniStyle.temp}>{temp}°C</Text>
     </View>
   )
@@ -29,10 +41,10 @@ const uniStyle = StyleSheet.create({
   white: {
     color: '#FFF',
   },
-  bold : {
+  bold: {
     fontWeight: 'bold'
   },
-  dayWeather : {
+  dayWeather: {
     backgroundColor: style.color,
     borderWidth: 0,
     borderBottomWidth: 1,
