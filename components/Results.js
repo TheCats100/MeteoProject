@@ -28,7 +28,7 @@ const Results = ({ city }) => {
 
   const renderItem = ({item, index}) => (
     <Weather 
-      temp={(item.temp.day - 273.15).toFixed(1)} 
+      temp={Math.round(item.temp.day - 273.15)} 
       day={parseInt(item.dt, 10)} 
       index={index} 
       typeWeather={item.weather[0].main.toLowerCase()}
