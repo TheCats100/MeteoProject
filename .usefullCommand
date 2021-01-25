@@ -1,0 +1,10 @@
+##for AVD could not start
+
+sudo chmod 777 -R /dev/kvm
+
+## execute android virtual device 
+
+cd .local/android-studio/bin
+./studio.sh
+
+
