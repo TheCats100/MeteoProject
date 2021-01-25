@@ -26,5 +26,5 @@ export default {
   indicator: {
     height: 2,
     backgroundColor: "#FFF"
-  }
+  },
 }
