@@ -6,5 +6,6 @@ sudo chmod 777 -R /dev/kvm
 
 cd .local/android-studio/bin
 ./studio.sh
+sudo chmod 777 -R /dev/kvm
 
 

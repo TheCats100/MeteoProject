@@ -15,7 +15,7 @@ const Weather = ({ temp, day, typeWeather, index }) => {
   const dayDate = (today) => <Text>{moment(today * 1000).format('DD/MM')}</Text>
 
   const icon = () => {
-    const useLogo = (url) => <Image source={url} style={{ width: 50, height: 50 }} />
+    const useLogo = (url) => <Image source={url} style={index === 0 ? { width: 100, height: 100 } : { width: 50, height: 50 }} />
     switch (typeWeather) {
       case 'clouds':
         return useLogo(require('./icons/cloudy.png'))
@@ -29,12 +29,12 @@ const Weather = ({ temp, day, typeWeather, index }) => {
 
 
   return (
-    <View style={[uniStyle.flex, uniStyle.dayWeather]}>
-      <View style={uniStyle.flex}>
+    <View style={[uniStyle.flex, uniStyle.dayWeather, index === 0 ? uniStyle.firstView : uniStyle.dayWeather]}>
+      <View style={index === 0 ? null : uniStyle.flex}>
         {icon()}
-        <Text style={{marginLeft: 10}}>{dayMoment(day)}{dayDate(day)}</Text>
+        <Text style={[{ marginLeft: 10 }], index === 0 ? { fontSize: 28 } : true}>{dayMoment(day)}{dayDate(day)}</Text>
       </View>
-      <Text style={uniStyle.temp}>{temp}°C</Text>
+      <Text style={[uniStyle.temp , index === 0 ? { fontSize: 37 } : true]}>{temp}°C</Text>
     </View>
   )
 }
@@ -52,6 +52,9 @@ const uniStyle = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center'
+  },
+  firstView: {
+    backgroundColor: '#e54b65',
   },
   dayWeather: {
     backgroundColor: '#394163',
