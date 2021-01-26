@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 import moment from 'moment';
 import 'moment/locale/fr';
 
+import FadeInView from './FadeInView';
 import style from '../Style';
 
 moment.locale('fr')
@@ -29,13 +30,13 @@ const Weather = ({ temp, day, typeWeather, index }) => {
 
 
   return (
-    <View style={[uniStyle.flex, uniStyle.dayWeather, index === 0 ? uniStyle.firstView : uniStyle.dayWeather]}>
-      <View style={index === 0 ? null : uniStyle.flex}>
-        {icon()}
-        <Text style={[{ marginLeft: 10 }], index === 0 ? { fontSize: 28 } : true}>{dayMoment(day)}{dayDate(day)}</Text>
+      <View style={[uniStyle.flex, uniStyle.dayWeather, index === 0 ? uniStyle.firstView : uniStyle.dayWeather]}>
+        <View style={index === 0 ? null : uniStyle.flex}>
+          {icon()}
+          <Text style={[{ marginLeft: 10 }], index === 0 ? { fontSize: 28 } : true}>{dayMoment(day)}{dayDate(day)}</Text>
+        </View>
+        <Text style={[uniStyle.temp, index === 0 ? { fontSize: 37 } : true]}>{temp}°C</Text>
       </View>
-      <Text style={[uniStyle.temp , index === 0 ? { fontSize: 37 } : true]}>{temp}°C</Text>
-    </View>
   )
 }
 
