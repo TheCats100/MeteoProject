@@ -13,7 +13,7 @@ moment.locale('fr')
 const Weather = ({ temp, day, typeWeather, index }) => {
 
   const dayMoment = (today) => <Text style={[uniStyle.white, uniStyle.bold]}>{(moment(today * 1000).format('ddd')).toUpperCase()}</Text>
-  const dayDate = (today) => <Text>{moment(today * 1000).format('DD/MM')}</Text>
+  const dayDate = (today) => <Text style={[uniStyle.white, uniStyle.bold]}>{moment(today * 1000).format('DD/MM')}</Text>
 
   const icon = () => {
     const useLogo = (url) => <Image source={url} style={index === 0 ? { width: 100, height: 100 } : { width: 50, height: 50 }} />

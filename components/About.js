@@ -12,6 +12,7 @@ const About = ({ navigation: { navigate } }) => {
 
   return (
     <View style={style.container}>
+      <Text style={style.title}>Gilbert Martin</Text>
       <Text style={style.title}>A propos de l'application</Text>
       <Text>
         Lorem ipsum dolor sit ametss, consectetur adipisicing elit. Veniam eligendi ullam nam. Veniam distinctio, iste in error illo ea molestiae magni ut, alias saepe nulla, cumque perspiciatis iusto quia accusantium?
